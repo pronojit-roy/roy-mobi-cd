@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: roy-svc
+  name: roy-svc
+spec:
+  ports:
+  - name: 7634-80
+    port: 7634
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: roy-finalapp
+  type: NodePort
+status:
+  loadBalancer: {}
