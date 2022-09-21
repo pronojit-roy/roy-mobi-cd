@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: roy-finalapp
+  name: roy-finalapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roy-finalapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: roy-finalapp
+    spec:
+      containers:
+      - image: pronojitroy/roy-mobi-web-app:0.0.4
+        name: roy-mobi-web-app
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
